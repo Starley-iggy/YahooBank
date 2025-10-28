@@ -1,0 +1,136 @@
+<!-- templates/dashboard.html
+Main dashboard for Yahoo Bank demo.
+
+This page loads static/style.css and static/script.js and Chart.js from CDN.
+It expects script.js to provide initialization functions on load.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yahoo Bank — Dashboard</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <!-- Chart.js CDN (used for activity chart) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="brand">Yahoo Bank</div>
+    <div class="top-actions">
+      <button id="scamAlertBtn" class="warn">Scam Alert</button>
+      <button id="govBonusBtn" class="secondary">Gov Bonus</button>
+      <label class="toggle">
+        <input id="darkToggle" type="checkbox" />
+        <span>Dark</span>
+      </label>
+      <button id="logoutBtn" class="secondary">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+      <!-- Welcome + Balance -->
+      <div class="card">
+        <div class="card-header">
+          <h2 id="welcome">Welcome, user</h2>
+          <div id="usernameBadge" class="badge">user</div>
+        </div>
+        <div class="balance">
+          <div class="small muted">Account Balance</div>
+          <div id="balanceValue" class="big">€0.00</div>
+        </div>
+      </div>
+
+      <!-- Send Money -->
+      <div class="card">
+        <h3>Send Money</h3>
+        <label>To (username)</label>
+        <input id="sendTo" placeholder="recipient" />
+        <label>Amount</label>
+        <input id="sendAmount" type="number" step="0.01" placeholder="100.00" />
+        <button id="sendBtn" class="primary">Send</button>
+        <div id="sendMsg" class="message"></div>
+      </div>
+
+      <!-- Spend Money -->
+      <div class="card">
+        <h3>Spend Money</h3>
+        <label>Item</label>
+        <input id="spendItem" placeholder="Coffee" />
+        <label>Cost</label>
+        <input id="spendCost" type="number" step="0.01" placeholder="3.50" />
+        <button id="spendBtn" class="primary">Buy</button>
+        <div id="spendMsg" class="message"></div>
+      </div>
+
+      <!-- Invest -->
+      <div class="card">
+        <h3>Invest</h3>
+        <label>Amount</label>
+        <input id="investAmount" type="number" step="0.01" placeholder="100.00" />
+        <button id="investBtn" class="primary">Invest</button>
+        <div id="investMsg" class="message"></div>
+      </div>
+
+      <!-- NPC Scam Others -->
+      <div class="card wide">
+        <h3>Scam Others (mini-game)</h3>
+        <p class="muted">Choose a target. Solve the math puzzle correctly to succeed.</p>
+        <div id="npcContainer" class="npc-container"></div>
+      </div>
+
+      <!-- Activity Chart -->
+      <div class="card wide">
+        <h3>Activity</h3>
+        <canvas id="activityChart" height="120"></canvas>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mini-game Modal -->
+  <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button id="modalClose" class="close">&times;</button>
+      <h3 id="modalTitle">Mini-game</h3>
+      <div id="miniGameBody">
+        <p id="npcNameDisplay"></p>
+        <p>Solve: <span id="mathA"></span> + <span id="mathB"></span> = ?</p>
+        <input id="mathAnswer" type="number" />
+        <div class="modal-actions">
+          <button id="submitAnswer" class="primary">Submit</button>
+          <button id="cancelModal" class="secondary">Cancel</button>
+        </div>
+        <div id="modalMsg" class="message"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scam popup element (dynamic small popup) -->
+  <div id="scamPopup" class="popup hidden">
+    <div class="popup-header">Message from <span id="scammerName">Prince</span></div>
+    <div class="popup-body">
+      <p id="scamText">Hello dear friend...</p>
+      <div class="popup-actions">
+        <button id="popupSend" class="warn">Send Money</button>
+        <button id="popupGain" class="primary">Try to Gain</button>
+        <button id="popupIgnore" class="secondary">Ignore</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/script.js"></script>
+  <script>
+    // Dashboard wiring: initialize app when DOM ready
+    window.addEventListener("DOMContentLoaded", function() {
+      // script.js provides initDashboard function
+      if (typeof window.initDashboard === "function") {
+        window.initDashboard();
+      } else {
+        console.error("initDashboard not found in script.js");
+      }
+    });
+  </script>
+</body>
+</html>

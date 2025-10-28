@@ -1,0 +1,79 @@
+<!-- templates/index.html
+Login page for Yahoo Bank demo.
+This page uses static/style.css and static/script.js.
+When the user clicks login (or presses Enter), it calls window.handleLogin(username, password).
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Yahoo Bank — Login</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="centered-container">
+    <div class="card login-card">
+      <h1 class="brand">Yahoo Bank </h1>
+      <p class="muted">Try to get as rich as possible.</p>
+
+      <label for="username">Username</label>
+      <input id="username" type="text" autocomplete="username" placeholder="alex" />
+
+      <label for="password">Password</label>
+      <input id="password" type="password" autocomplete="current-password" placeholder="1234" />
+
+      <button id="loginBtn" class="primary">Login</button>
+
+      <!-- Dark mode toggle button -->
+      <button id="darkModeToggle" class="secondary" style="margin-top:10px;">🌙 Dark Mode</button>
+
+      <div class="muted small" style="margin-top:10px;">
+        Try: <strong>alex / 1234</strong> or <strong>jamie / password</strong>
+      </div>
+
+      <div id="loginMessage" class="message"></div>
+    </div>
+  </main>
+
+  <script src="/static/script.js"></script>
+  <script>
+    // Simple DOM wiring for login page.
+    document.getElementById("loginBtn").addEventListener("click", function() {
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+      // window.handleLogin exported by script.js (must exist)
+      window.handleLogin(u, p)
+        .catch(err => {
+          // handleLogin returns a Promise that rejects on error; show message
+          const m = document.getElementById("loginMessage");
+          m.textContent = err?.message || "Login failed";
+          m.classList.add("error");
+        });
+    });
+
+    // Allow Enter to submit
+    document.getElementById("password").addEventListener("keyup", function(e){
+      if (e.key === "Enter") {
+        document.getElementById("loginBtn").click();
+      }
+    });
+
+    // Dark mode toggle functionality
+    const darkToggle = document.getElementById("darkModeToggle");
+    darkToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      if (document.body.classList.contains("dark")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    });
+
+    // Apply stored theme on page load
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark");
+    }
+  </script>
+</body>
+</html>
