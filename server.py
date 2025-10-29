@@ -353,4 +353,4 @@ def api_scam_mini_game():
 if __name__ == "__main__":
     print("Starting Yahoo Bank demo app on http://127.0.0.1:5000")
     print("Example logins: alex/1234, jamie/password, user/pass")
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
