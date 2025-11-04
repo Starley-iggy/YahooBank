@@ -361,8 +361,8 @@ function createNPCButtons(npcs) {
 function openMiniGameModal(npcKey) {
   currentTargetNPC = npcKey;
   // create a small math challenge
-  currentA = Math.floor(Math.random() * 10) + 1;
-  currentB = Math.floor(Math.random() * 10) + 1;
+  currentA = Math.floor(Math.random() * 20) + 1;
+  currentB = Math.floor(Math.random() * 20) + 1;
   qs("npcNameDisplay").textContent = "Target: " + npcKey.replace(/_/g, " ");
   qs("mathA").textContent = currentA;
   qs("mathB").textContent = currentB;
@@ -379,7 +379,7 @@ function closeMiniGameModal() {
 /* Submit answer handler in modal */
 function submitMiniGameAnswer() {
   const ans = Number(qs("mathAnswer").value);
-  const correct = ans === (currentA + currentB);
+  const correct = ans === (currentA * currentB);
   // Call API with success true/false
   apiPost("/api/scam_mini_game", { target: currentTargetNPC, success: correct })
     .then((resp) => {
