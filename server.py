@@ -62,7 +62,7 @@ npcs = {
     "taxi_driver": {"balance": 3000.0},
     "banker": {"balance": 100000.0},
     "artist": {"balance": 7000.0},
-    "random_rich_user": {"balance": 90000000.0},
+    "entrepreneur": {"balance": 90000000.0},
     "rich_influencer": {"balance": 150000.0},
     "rapper": {"balance": 250000.0},
     "nurse": {"balance": 300.0},
