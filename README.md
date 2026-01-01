@@ -108,7 +108,7 @@ MAX_INVEST_FACTOR = 2.0       # Factor: 2 = winst 100%
 
 ## Beveiliging / Disclaimer ## 
 
-- In-memory demo — geen persistente opslag.
+- In-memory demo geen persistente opslag.
 - Demo secret_key, geen CSRF bescherming.
 - Geen echte wachtwoorden gebruiken.
 - Niet geschikt voor productie.
