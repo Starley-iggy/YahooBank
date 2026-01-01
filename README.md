@@ -1,10 +1,12 @@
 # Yahoo Bank — Web Banking Game
+<img width="1529" height="344" alt="Yahoobank banner2" src="https://github.com/user-attachments/assets/b3ce01e0-3ffe-4584-8923-82bd1ec93ff9" />
 
-![Yahoo Bank Banner](https://via.placeholder.com/800x200?text=Yahoo+Bank+Demo)
 
 [![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/)
 [![Flask](https://img.shields.io/badge/Flask-2.3.2-orange?logo=flask)](https://flask.palletsprojects.com/)
 [![GitHub stars](https://img.shields.io/github/stars/Starley/Yahoo-Bank?style=social)](https://github.com/Starley/Yahoo-Bank)
+
+
 
 **Yahoo Bank** is een interactieve, educatieve webapplicatie waarmee je het concept van online bankieren en financiële acties kunt leren. Deze demo is volledig in-memory en bedoeld voor leerdoeleinden. **Niet voor productiegebruik.**
 
