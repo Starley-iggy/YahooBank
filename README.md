@@ -112,7 +112,7 @@ MAX_INVEST_FACTOR = 2.0       # Factor: 2 = winst 100%
 - Niet geschikt voor productie.
 
 
-##  Gemaakt door
+##  Author
 
-**Starley Igbinomwhaia Briggs** — volledig ontworpen en ontwikkeld door Starley als leerproject.
+**Starley Igbinomwhaia Briggs** — fully designed, coded and deployed by me, Starley as a learning project.
 
