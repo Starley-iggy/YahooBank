@@ -10,11 +10,7 @@
 
 **Yahoo Bank** is een interactieve, educatieve webapplicatie waarmee je het concept van online bankieren en financiële acties kunt leren. Deze demo is volledig in-memory en bedoeld voor leerdoeleinden. **Niet voor productiegebruik.**
 
----
 
-##  Gemaakt door
-
-**Starley Igbinomwhaia Briggs** — volledig ontworpen en ontwikkeld door Starley als leerproject.
 
 ---
 
