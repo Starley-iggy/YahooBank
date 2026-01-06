@@ -114,3 +114,9 @@ MAX_INVEST_FACTOR = 2.0       # Factor: 2 = winst 100%
 - Demo secret_key, geen CSRF bescherming.
 - Geen echte wachtwoorden gebruiken.
 - Niet geschikt voor productie.
+
+
+##  Gemaakt door
+
+**Starley Igbinomwhaia Briggs** — volledig ontworpen en ontwikkeld door Starley als leerproject.
+
