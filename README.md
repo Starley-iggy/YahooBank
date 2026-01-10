@@ -50,7 +50,7 @@
 
  ## Bestand Structuur ##
 
-  ### yahoo-bank/
+  ### yahoo bank/
 │
 ├─ server.py # Flask backend
 
