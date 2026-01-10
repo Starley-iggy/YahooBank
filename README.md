@@ -49,7 +49,8 @@
   - Dark mode toggle op login- en dashboardpagina.
 
  ## Bestand Structuur ##
-  - yahoo-bank/
+
+  ### yahoo-bank/
 │
 ├─ server.py # Flask backend
 
