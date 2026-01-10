@@ -106,11 +106,17 @@ Scam Alert popup: probeer Send Money → verlies 50–90% of win €10,000.
 Toggle Dark Mode → controleer dat het op login en dashboard werkt.
 
 ## Configuratie ##
+
 SCAM_PRINCE_ODDS = 0.05       # Kans op €10,000
+
 NPC_REVENGE_ODDS = 0.05       # Kans NPC revenge
-NPC_COOLDOWN_SECONDS = 30     # Cooldown voor mini-game
+
+NPC_COOLDOWN_SECONDS = 30     # Cooldown voor mini game
+
 MIN_INVEST_FACTOR = 0.0       # Factor: 0 = verlies 100%
+
 MAX_INVEST_FACTOR = 2.0       # Factor: 2 = winst 100%
+
 
 ## Beveiliging / Disclaimer ## 
 
@@ -122,5 +128,7 @@ MAX_INVEST_FACTOR = 2.0       # Factor: 2 = winst 100%
 
 ##  Author
 
-**Starley Igbinomwhaia Briggs** — fully designed, coded and deployed by me, Starley as a learning project.
+**Starley Igbinomwhaia Briggs** 
+
+fully designed, coded and deployed by me, Starley as a learning project.
 
