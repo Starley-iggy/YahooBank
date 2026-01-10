@@ -52,12 +52,19 @@
   - yahoo-bank/
 │
 ├─ server.py # Flask backend
+
 ├─ templates/
+
 │ ├─ index.html # Loginpagina
+
 │ └─ dashboard.html # Hoofd-dashboard
+
 ├─ static/
+
 │ ├─ style.css # Alle CSS (light/dark mode)
+
 │ └─ script.js # JS logica, API calls, Chart.js
+
 └─ README.md # Dit bestand
 
 ## How to Play
